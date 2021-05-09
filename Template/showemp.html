@@ -1,0 +1,90 @@
+{%load static%}
+{% static "images" as baseurl%}
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Employee</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+
+				<!-- <div class="col-md-6 text-center mb-5">
+					<h2 style="font-weight: bolder;" class="heading-section">Workers</h2>
+				</div> -->
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+
+
+						<table class="table">
+							<thead class="thead-primary">
+								<tr>
+									<!-- Button -->
+									<a class="btn btn-primary col-md-6"
+										style="background-color: rgb(21, 243, 13);margin-left: 0px;"
+										href="search">Back</a>
+									<a class="btn btn-primary col-md-6"
+										style="background-color: rgb(245, 16, 16); margin-right: 0px;"
+										href="/employerhome">Home</a>
+									<th>Name</th>
+									<th>Qualification</th>
+									<th>Experience</th>
+									<th>Phone number</th>
+									<th>Wage</th>
+									<th>Pin</th>
+									<th>Address</th>
+									<th>Request</th>
+								</tr>
+							</thead>
+							<tbody>
+								{%for employee in emp%}
+								<tr>
+									<th scope="row" class="scope">{{employee.name}}</th>
+									<td>{{employee.qualification}}</td>
+									<td>{{employee.experience}}</td>
+									<td>{{employee.phnumber}}</td>
+									<td>{{employee.wages}}</td>
+									<td>{{employee.pin}}</td>
+									<td>{{employee.address}}</td>
+									<td><a href="#" class="btn btn-primary">Request</a></td>
+								</tr>
+								{%endfor%}
+
+								<!-- <tr>
+									<th scope="row" class="scope border-bottom-0">.me</th>
+									<td class="border-bottom-0">1 Year</td>
+									<td class="border-bottom-0">$45.00</td>
+									<td class="border-bottom-0">$5.00</td>
+									<td class="border-bottom-0">$5.00</td>
+									<td class="border-bottom-0"><a href="#" class="btn btn-primary">Sign Up</a></td>
+								</tr> -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/popper.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/mains.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+{%load static%}
+{% static "images" as baseurl%}
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8">
+  <title>Employer Registration</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Cleaning Company Website Template" name="keywords">
+  <meta content="Cleaning Company Website Template" name="description">
+
+  <!-- Favicon -->
+  <link href="{% static ' img/favicon.ico' %}" rel="icon">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
+
+  <!-- CSS Libraries -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+<!-- 
+<style>
+  input[type=text] {
+    padding:5px; 
+    border:2px solid #ccc; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+</style> -->
+
+
+</head>
+
+
+
+<body>
+
+  <div class="wrapper">
+    <!-- Header Start -->
+    <div class="header home">
+      <div class="container-fluid">
+        <div class="header-top row align-items-center">
+          <div class="col-lg-3">
+            <div class="brand">
+              <a href="/">
+
+                <!-- <img src="img/logo.png" alt="Logo"> -->
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="topbar">
+              <div class="topbar-col">
+                <a href="tel:+917356417824'%}"><i class="fa fa-phone-alt"></i>+917356417824</a>
+              </div>
+              <div class="topbar-col">
+                <a href="mailto:info@example.com%}"><i class="fa fa-envelope"></i>info@example.com</a>
+              </div>
+              <div class="topbar-col">
+                <div class="topbar-social">
+                  <a href=""><i class="fab fa-twitter"></i></a>
+                  <a href=""><i class="fab fa-facebook-f"></i></a>
+                  <a href=""><i class="fab fa-youtube"></i></a>
+                  <a href=""><i class="fab fa-instagram"></i></a>
+                  <a href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <form id="form1" name="form1" method="post" action="employerreg">
+      {%csrf_token%}
+      <table width="200" border="0" style="margin-left: auto;
+    margin-right: auto; border-collapse: separate;
+        border-spacing: 0 15px; font-weight: 1000;">
+        <caption>
+
+        </caption>
+        <tr>
+          <td>Name</td>
+          <td><label>
+              <input type="text" name="name" />
+            </label></td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td><label>
+              <input type="text" name="address" />
+            </label></td>
+        </tr>
+        <tr>
+          <td>Phone No </td>
+          <td><label>
+              <input type="tel" name="phnumber" />
+            </label></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><label>
+              <input type="email" name="email" />
+            </label></td>
+        </tr>
+        <tr>
+          <td>Pin code </td>
+          <td><label>
+              <input type="text" name="pin" />
+            </label></td>
+        </tr>
+        <tr>
+          <td>Username</td>
+          <td><label>
+              <input type="text" name="username" />
+            </label></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><label>
+              <input type="password" name="password1" />
+            </label></td>
+        </tr>
+        <tr>
+          <td>Confirm password </td>
+          <td><label>
+              <input type="password" name="password2" />
+            </label></td>
+        </tr>
+        <tr>
+        <tr>
+          <td>
+            <!-- <a href="/" title="Home" class="btn btn-warning">Home</a> -->
+          </td>
+          <td>
+            <input type="submit" name="Submit" value="Register" class="btn btn-primary btn-block" style="background-color: darkturquoise; size: 12px;" /></td>
+            </td>
+        </tr>
+        <tr>
+          <td>
+
+          </td>
+          <td>
+            <a href="/" title="Home" class="btn btn-primary btn-block" style="background-color: rgb(245, 23, 23); size: 12px;">Home</a>
+          </td>
+        </tr>
+      </table>
+    </form>
+    {%for message in messages%}
+    <script>alert('{{ message }}');</script>
+    {%endfor%}
+
+
+
+
+    <div id="contact"></div>
+    <div class="footer" id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3"  style="margin-left: auto;
+          margin-right: auto;">
+            <div class="footer-contact">
+              <h2>Get In Touch</h2>
+              <p><i class="fa fa-map-marker-alt"></i>University of Calicut</p>
+              <p><i class="fa fa-phone-alt"></i>+919867543210</p>
+              <p><i class="fa fa-envelope"></i>workersportal@gmail.com</p>
+              <div class="footer-social">
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+          
+
+
+        
+      </div>
+      </div>
+
+
+    </div>
+  </div>
+  </div>
+  </div>
+</body>
+
+</html>
